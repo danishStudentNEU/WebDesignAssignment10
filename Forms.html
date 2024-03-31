@@ -9,30 +9,32 @@
 <body>
    <div id="container">
         <h1>Pizza Registration</h1>
-        <form id="pizzaform" onsubmit="return onvalidateForm()">
-            <label>Name:</label><br>
-            <input type="text" id="name" name="name" minlength="3" required><br><br>
+        <div id="form-container">
+            <form id="pizzaform" onsubmit="return onvalidateForm()">
+                <label>Name:</label><br>
+                <input type="text" id="name" name="name" minlength="3" required><br><br>
 
-            <label>Year of Birth:</label><br>
-            <input type="number" id="birthyear" min="1900" max="2099" required><br><br>
+                <label>Year of Birth:</label><br>
+                <input type="number" id="birthyear" min="1900" max="2099" required><br><br>
 
-            <label>Do you live in the United States?</label><br>
-            <input type="checkbox" id="usResident"><br><br>
+                <label>Do you live in the United States?</label><br>
+                <input type="checkbox" id="usResident" onclick="toggleZipcode()"><br><br>
 
-            <label>Zipcode:</label><br>
-            <input type="number" id="zipcode" minlength="5" maxlength="5"><br>
+                <label>Zipcode:</label><br>
+                <input type="number" id="zipcode" maxlength=5 disabled><br>
 
-            <label>Password</label><br>
-            <input type="password" id="password" required><br><br>
+                <label>Password:</label><br>
+                <input type="password" id="password" required><br><br>
 
-            <label>Preferred type of Pizza</label>
-            <select id="pizzaType" name="pizzaType" required>
-                <option value="With Pineapple">With Pineapple</option>
-                <option value="Without Pineapple">Without Pineapple</option>
-                <option value="I do not like Pizza">I do not like pizza</option>
-            </select><br><br>
-            <button type="submit">Submit</button>
-        </form>
+                <label>Preferred type of Pizza</label><br>
+                <select id="pizzaType" name="pizzaType" required>
+                    <option value="With Pineapple">With Pineapple</option>
+                    <option value="Without Pineapple">Without Pineapple</option>
+                    <option value="I do not like Pizza">I do not like pizza</option>
+                </select><br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         <div id="errorMessages"></div>
         <div id="successMessage"></div>
     </div>
